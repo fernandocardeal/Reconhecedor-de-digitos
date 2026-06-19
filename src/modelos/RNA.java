@@ -10,6 +10,14 @@ public class RNA {
     private double[][] saidasEsperadas;
     private ArrayList<Double> erros;
 
+    public void definirEntradas(double[][] entradas) {
+        this.entradas = entradas;
+    }
+
+    public void definirSaidasEsperadas(double[][] saidasEsperadas) {
+        this.saidasEsperadas = saidasEsperadas;
+    }
+
     public RNA(Neuronio[] neuronios, double[][] entradas, double[][] saidasEsperadas) {
         this.neuronios = neuronios;
         this.entradas = entradas;
@@ -18,7 +26,7 @@ public class RNA {
     }
 
     public void realizarTreinamento() {
-        System.out.println("===== INICIANDO TREINAMENTO =====\n");
+        System.out.println("\n===== INICIANDO TREINAMENTO =====\n");
         for (int i = 0; i < this.entradas.length; i++) {
             for (int j = 0; j < this.neuronios.length; j++) {
                 System.out.println("Treinando vetor (" + i + ") " + Arrays.toString(entradas[i]) + " para o neurônio " + j + "\n");
